@@ -16,7 +16,7 @@ public class BreadthFirstPaths {
         bfs(graph, start);
     }
 
-    private void bfs(Graph graph, int v){
+    private void bfs(Graph graph, int start){
         Queue<Integer> queue = new PriorityQueue<>();
         marked[start] = true;
         queue.add(start);
