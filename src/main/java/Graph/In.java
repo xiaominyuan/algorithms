@@ -24,6 +24,21 @@ public class In {
         return ints;
     }
 
+    public double readDouble() {
+        try {
+            return scanner.nextDouble();
+        }
+        catch (InputMismatchException e) {
+            String token = scanner.next();
+            throw new InputMismatchException("attempts to read an 'int' value from the input stream, "
+                    + "but the next token is \"" + token + "\"");
+        }
+        catch (NoSuchElementException e) {
+            throw new NoSuchElementException("attemps to read an 'int' value from the input stream, "
+                    + "but no more tokens are available");
+        }
+    }
+
     public String readAll(){
         if (! scanner.hasNextLine()){
             return "";
